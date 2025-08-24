@@ -26,7 +26,6 @@ var qs = []*survey.Question{
 }
 
 var addCmd = &cobra.Command{
-	// ... 이하 코드는 이전과 동일합니다 ...
 	Use:   "add",
 	Short: "대화형으로 새로운 SAA 문제를 분석하고 Notion에 추가합니다.",
 	Long:  `add 명령어를 실행하면, 문제 번호와 내용을 순서대로 질문합니다.`,
@@ -59,6 +58,10 @@ var addCmd = &cobra.Command{
 			return
 		}
 		fmt.Println("✅ 성공! Notion에서 새로운 문제 노트를 확인하세요.")
+
+		fmt.Println("\n--- [ AI 분석 결과 ] ---")
+		fmt.Println(analysisResult)
+		fmt.Println("--------------------")
 	},
 }
 
